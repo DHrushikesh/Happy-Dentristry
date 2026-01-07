@@ -16,8 +16,7 @@ export default function HappyDentistryLanding() {
   const imageUrls = [
     "https://res.cloudinary.com/dmrvr0ieg/image/upload/v1767713158/WhatsApp_Image_2026-01-04_at_3.45.19_PM_eqbi78.jpg",
     "https://res.cloudinary.com/dmrvr0ieg/image/upload/v1767712215/WhatsApp_Image_2026-01-06_at_8.16.04_PM_g9rmrz.jpg",
-    // Add your third image URL here when ready
-    "https://res.cloudinary.com/dmrvr0ieg/image/upload/v1767712215/WhatsApp_Image_2026-01-06_at_8.16.04_PM_g9rmrz.jpg" // Replace with your third image
+    "https://res.cloudinary.com/dmrvr0ieg/image/upload/v1767761569/WhatsApp_Image_2026-01-06_at_8.56.14_PM_nbp0he.jpg" 
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
