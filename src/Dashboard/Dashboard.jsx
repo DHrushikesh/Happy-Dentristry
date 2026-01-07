@@ -9,7 +9,7 @@ export default function HappyDentistryLanding() {
         : "Hi, I want to book an appointment at Happy Dentistry."
     );
 
-    window.open(`https://wa.me/919585370733?text=${message}`, "_blank");
+    window.open(`https://wa.me/917010736636?text=${message}`, "_blank");
   };
 
   // Image URLs for slideshow
