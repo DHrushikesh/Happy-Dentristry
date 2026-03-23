@@ -1,6 +1,29 @@
 import { useState, useEffect } from 'react';
 
 export default function HappyDentistryLanding() {
+//Navigation Behaviour 
+  
+export default function Nav() {
+  useEffect(() => {
+    const handler = (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+
+      const id = a.getAttribute("href").slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Optional: update URL hash without jumping
+      history.pushState(null, "", `#${id}`);
+    };
+
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, []);
+
+  
   // WhatsApp booking handler
   const handleBookAppointment = (doctorName = "") => {
     const message = encodeURIComponent(
@@ -38,6 +61,17 @@ export default function HappyDentistryLanding() {
     setCurrentIndex((prev) => (prev - 1 + imageUrls.length) % imageUrls.length);
   };
 
+  // ✅ Smooth scroll handler (added)
+  const handleAnchorClick = (e, href) => {
+    if (!href?.startsWith('#')) return;
+    const id = href.slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.pushState(null, '', href);
+  };
+
   return (
     <div className="relative overflow-hidden">
       <div className="bg-[#fffaf5] text-slate-900">
@@ -54,7 +88,8 @@ export default function HappyDentistryLanding() {
               <a
                 key={item.label}
                 href={item.href}
-                className="relative px-4 py-2 rounded-full hover:text-orange-500
+                onClick={(e) => handleAnchorClick(e, item.href)} {/* ✅ added */}
+                className="relative group px-4 py-2 rounded-full hover:text-orange-500
                 "
               >
                 <span
@@ -105,8 +140,7 @@ export default function HappyDentistryLanding() {
                 Book Consultation
               </button>
 
-              <a
-                href="#services"
+              #services handleAnchorClick(e, '#services')} {/* ✅ added */}
                 className="border border-slate-300 px-6 py-3 rounded-xl font-semibold hover:shadow-xl transition"
               >
                 View Services
