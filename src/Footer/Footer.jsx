@@ -4,7 +4,7 @@ export default function Footer() {
     const message = encodeURIComponent(
       "Hi, I want to book an appointment at Happy Dentistry."
     );
-    window.open(`https://wa.me/919585370733?text=${message}`, "_blank");
+    window.open(`https://wa.me/917010736636?text=${message}`, "_blank");
   };
 
   const scrollToTop = () => {
@@ -89,10 +89,10 @@ export default function Footer() {
               <li className="flex items-center space-x-3">
                 <span className="text-orange-400">📞</span>
                 <a 
-                  href="tel:+919585370733" 
+                  href="tel:+917010736636" 
                   className="hover:text-orange-400 transition-colors"
                 >
-                  +91 95853 70733
+                  +91 7010736636
                 </a>
               </li>
               <li className="flex items-center space-x-3">
@@ -131,7 +131,7 @@ export default function Footer() {
                 📱 Book on WhatsApp
               </button>
               <a
-                href="tel:+919585370733"
+                href="tel:+917010736636"
                 className="border border-slate-500 hover:border-orange-400 text-white px-6 py-3 rounded-full font-semibold transition hover:text-orange-400"
               >
                 Call Now
